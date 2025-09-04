@@ -1,0 +1,33 @@
+:root {
+  /* fallback if brand color is not set */
+  --sidebar-active: var(--vp-c-brand-1, #3b82f6);
+  --sidebar-active-bg: color-mix(in oklab, var(--sidebar-active) 12%, transparent);
+  --sidebar-hover-bg: color-mix(in oklab, var(--sidebar-active) 8%, transparent);
+}
+
+/* Make active sidebar item blue like hover and add a left accent */
+.VPSidebar .VPLink.active,
+.VPSidebar .VPLink[aria-current="page"],
+.VPSidebar .VPLink.router-link-active {
+  color: var(--sidebar-active);
+  background: var(--sidebar-active-bg);
+  border-left: 3px solid var(--sidebar-active);
+}
+
+/* Keep hover consistent with active */
+.VPSidebar .VPLink:hover {
+  color: var(--sidebar-active);
+  background: var(--sidebar-hover-bg);
+}
+
+/* Slight padding so the left border doesn’t shift text */
+.VPSidebar .VPLink {
+  padding-left: calc(var(--vp-sidebar-link-padding-left, 16px) - 3px);
+  border-left: 3px solid transparent;
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+}
+
+/* Improve visibility for nested items as well */
+.VPSidebar .items .VPLink.active {
+  font-weight: 600;
+}

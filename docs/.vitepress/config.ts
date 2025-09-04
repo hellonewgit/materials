@@ -2,6 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  // Base path for GitHub Pages (repository name)
+  base: '/materials/',
   lang: 'ru-RU',
   title: 'Методические материалы | Конспект',
   description: 'Конспекты и материалы уроков',
